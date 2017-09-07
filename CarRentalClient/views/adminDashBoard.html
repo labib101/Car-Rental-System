@@ -1,0 +1,63 @@
+﻿<div class="container-fluid animate-bottom row" ng-controller="adminDashController" ng-show="!q" >
+    <div class="col-sm-4">
+        <div class="card" >
+            
+            <div class="card-block">
+                <h4 class="card-title"><i class="fa fa-car" aria-hidden="true"></i> Rental Cars</h4>
+                <h5 class="card-title"> Total number of Cars: {{noofCars}}</h5>
+                <p class="card-text">A fleet of {{noofCars}} cars are available for paying Customers. </p>
+                <hr />
+                <button class="btn btn-outline-success" ng-click="add"><i class="fa fa-car" aria-hidden="true"></i> Add More<i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                <button href="#/managecar" class="btn btn-outline-info"><i class="fa fa-car" aria-hidden="true"></i> View Cars<i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+           
+            <div class="card-block">
+                <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i> Registered Members</h4>
+                <h5 class="card-title"> Total number of Users: {{noofUsers}}</h5>
+                <p class="card-text">Total {{noofUsers}} users are registered in our system. </p>
+                <hr />
+                <button class="btn btn-outline-danger"><i class="fa fa-user" aria-hidden="true"></i> Manage Users<i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            
+            <div class="card-block">
+                <h4 class="card-title"><i class="fa fa-university" aria-hidden="true"></i> Banks</h4>
+                <h5 class="card-title"> Total number of Supported banks: {{noofBanks}}</h5>
+                <p class="card-text">Support from {{noofBanks}} banks are available for paying Customers. </p>
+                <hr />
+                <a href="#" class="btn btn-outline-success"><i class="fa fa-university" aria-hidden="true"></i> Add More<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                <a href="#" class="btn btn-outline-info"><i class="fa fa-university" aria-hidden="true"></i> Manage Banks<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+
+            <div class="card-block">
+                <h4 class="card-title"><i class="fa fa-check" aria-hidden="true"></i> Bookings</h4>
+                <h5 class="card-title"> Total {{noofBookings}} were made so far</h5>
+                <p class="card-text">A whooping number of  {{noofBookings}} were made from our paying Customers. </p>
+                <hr />
+                
+                <a href="#" class="btn btn-outline-info"><i class="fa fa-check" aria-hidden="true"></i> Manage Bookings<i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div ng-repeat="x in st ">
+            <p >{{x.companyName}}</p>
+        </div>
+    </div>
+    
+</div>
+<div class="loader" ng-show="q">
+
+</div>

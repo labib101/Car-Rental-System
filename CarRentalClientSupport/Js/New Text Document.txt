@@ -1,0 +1,45 @@
+
+
+var app = angular.module('facebookapp', []);
+app.run('$rootscope', function ($rootscope) {
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '253726795141785',
+            autoLogAppEvents: true,
+            cookie: true,
+            xfbml: true,
+            version: 'v2.9'
+        });
+        FB.AppEvents.logPageView();
+    };
+    FB.api('/me', {
+        fields: 'last_name'
+    }, function (response) {
+        $rootscope.resp = response.data;
+    });
+});
+app.factory('facebookService', function ($q) {
+      return {
+          getMyLastName: function () {
+              var deferred = $q.defer();
+              FB.api('/me', {
+                  fields: 'last_name'
+              }, function (response) {
+                  if (!response || response.error) {
+                      deferred.reject('Error occured');
+                  } else {
+                      deferred.resolve(response);
+                  }
+              });
+              return deferred.promise;
+          }
+      }
+  });
+
+  app.controller('myControl', ['$scope', 'facebookService', function ($scope, facebookService) {
+      $scope.hello = "hello";
+      facebookService.getMyLastName().then(function (response) {
+          $scope.last_name = response.last_name;
+      });
+
+  }]);

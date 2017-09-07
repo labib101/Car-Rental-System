@@ -1,0 +1,46 @@
+﻿<div class="container-fluid animate-bottom" ng-controller="adminDashController">
+    <div class="form-group">
+        <label for="lc">vehicle Type:</label>
+        <select class="form-control" id="lc" ng-model="vehicleType">
+            <option value="1">Sedan</option>
+            <option value="2">SUV</option>
+            <option value="3">Microbus</option>
+            <option value="4">Coasters</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="productname">Registration Number:</label>
+        <input type="text" class="form-control" id="productname" placeholder="Enter Registration Number" name="productname" ng-model="regnum">
+    </div>
+    <div class="form-group">
+        <label for="price">Price: $</label>
+        <select class="form-control" id="lc" ng-model="pricegroup">
+            <option value="1">$</option>
+            <option value="2">$$</option>
+            <option value="3">$$$</option>
+            <option value="4">$$$$</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="lc1">Manufacturer:</label>
+        <input type="text" class="form-control" id="lc1" placeholder="Enter Manufacturer Name" name="lc1" ng-model="CarManufacturer">
+    </div>
+    <div class="form-group">
+        <label for="lc1">Model Name:</label>
+        <input type="text" class="form-control" id="lc1" placeholder="Enter ModelName Name" name="lc1" ng-model="ModelName">
+    </div>
+    <div class="form-group">
+        <label for="lc1">Drivername:</label>
+        <input type="text" class="form-control" id="lc1" placeholder="Enter Driver Name" name="lc1" ng-model="DriverName">
+    </div>
+
+    <div class="form-group">
+        <label for="lc">category:</label>
+        <select class="form-control" id="sel1" ng-model="CategoryName" ng-options="item as item.CategoryName for item in category track by item.CategoryName">
+            <option>Select..</option>
+
+        </select>
+    </div>
+
+    <button class="btn btn-default" ng-click="add()">Submit</button>
+</div>
